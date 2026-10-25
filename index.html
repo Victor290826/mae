@@ -1161,6 +1161,38 @@
             const carta = document.getElementById('declaracao-texto');
             carta.classList.toggle('aberta');
         }
+        // 1. Defina a tela inicial assim que o site carregar
+window.addEventListener('DOMContentLoaded', () => {
+    // Registra a tela/menu inicial no histórico do navegador
+    history.replaceState({ room: 'sala_estar' }, '', '#sala_estar');
+});
+
+// 2. Atualize a função de trocar de cômodo/menu para registrar cada navegação
+function changeRoom(key, isBackAction = false) {
+    if (!roomsData[key]) return;
+    currentRoomKey = key;
+
+    // Se a navegação veio de um clique (e NÃO do botão voltar), adiciona no histórico
+    if (!isBackAction) {
+        history.pushState({ room: key }, '', `#${key}`);
+    }
+
+    // --- Seu código atual de atualizar imagem/telas entra aqui ---
+    document.getElementById('mainImage').src = roomsData[key].image;
+    document.getElementById('roomTitle').innerText = roomsData[key].title;
+    // ...
+}
+
+// 3. Escute o botão "Voltar" do celular / navegador
+window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.room) {
+        // Se houver um estado anterior gravado, navega para ele sem fechar o site
+        changeRoom(event.state.room, true);
+    } else {
+        // Se voltou até o início, força a exibição do menu principal / tela inicial
+        changeRoom('sala_estar', true);
+    }
+});
     </script>
 </body>
 </html>
