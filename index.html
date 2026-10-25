@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário da Mãe ❤️</title>
+    
+    <!-- Fontes do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-principal: #ff69b4;
+            --cor-secundaria: #ffb6c1;
+            --cor-fundo: #3e3538;
+            --cor-card: #ffffff;
+            --cor-borda: #ff1493;
+            --cor-dourado: #ffd700;
+            --cor-vermelho: #ff0000;
+            --cor-verde: #00ff00;
+            --cor-azul: #0000ff;
+            --cor-cinza-claro: #d3d3d3;
+            --cor-vinho: #6d1042;
+            --cor-vinho-escuro: #380521;
+            --cor-creme: #FAF9F6;
+            --fundo-pag: #fffdf9;
+            --cor-texto: #475569;
+            --cor-marfim: #F7E7CE; 
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--cor-texto);
+            background-color: var(--fundo-pag);
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle at 50% 30%, #6d1042 0%, #380521 50%, #17000d 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cabec-titulo {
+            color: var(--cor-dourado);
+            font-size: 3.5em;
+            font-weight: bold;
+            font-family: 'Great Vibes', cursive;
+            margin-bottom: 5px;
+        }
+
+        .desc {
+            color: var(--cor-cinza-claro);
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .foto-inicio, .foto-inicial {
+            width: 100%;
+            max-width: 350px;
+            height: 280px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(109, 16, 66, 0.2);
+            border: 4px solid #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* --- NOVO: BLOCOS DO CONTADOR DE DIAS --- */
+        .card-contador {
+            background: linear-gradient(135deg, #6d1042 0%, #380521 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin: 20px auto 35px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(109, 16, 66, 0.25);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .titulo-contador {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--cor-dourado);
+            margin-bottom: 8px;
+        }
+
+        .frase-destaque-contador {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .grid-tempo {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .item-tempo {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 12px 18px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .valor-tempo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cor-dourado);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .rotulo-tempo {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cor-secundaria);
+        }
+
+        /* --- MENU PRINCIPAL DE OPÇÕES (INICIAL) --- */
+        .secao-menu-opcoes {
+            padding: 10px 10px 40px 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .grid-opcoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card-opcao {
+            background: #ffffff;
+            border: 2px solid var(--cor-secundaria);
+            border-radius: 16px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(109, 16, 66, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-opcao:hover {
+            transform: translateY(-8px);
+            border-color: var(--cor-vinho);
+            box-shadow: 0 12px 24px rgba(109, 16, 66, 0.18);
+        }
+
+        .card-opcao .icone-opcao {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .card-opcao h3 {
+            color: var(--cor-vinho-escuro);
+            margin: 5px 0;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-opcao p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 6px;
+        }
+
+        /* --- BARRA DE NAVEGAÇÃO E BOTÃO VOLTAR --- */
+        .barra-navegacao {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            background: rgba(255, 253, 249, 0.95);
+            padding: 12px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .btn-voltar {
+            background: var(--cor-vinho);
+            color: var(--cor-dourado);
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 8px rgba(109, 16, 66, 0.3);
+        }
+
+        .btn-voltar:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-nav {
+            background: #fff;
+            border: 1px solid var(--cor-principal);
+            color: var(--cor-vinho);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-nav:hover, .btn-nav.ativo {
+            background: var(--cor-vinho);
+            color: #ffffff;
+        }
+
+        /* --- SEÇÕES DE CONTEÚDO --- */
+        .secao-conteudo {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .titulo-menu {
+            color: #380521;
+            font-size: 2.2em;
+            margin-top: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .subtitulo-menu {
+            color: #6d1042;
+            font-size: 0.85em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* --- NOVO: ESTILOS DA LINHA DO TEMPO --- */
+        .timeline-container {
+            position: relative;
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 10px 0;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--cor-vinho), var(--cor-secundaria));
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 35px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+            padding-left: 35px;
+        }
+
+        .timeline-item::after {
+            content: '❤️';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: -15px;
+            background-color: #ffffff;
+            border: 2px solid var(--cor-vinho);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -15px;
+        }
+
+        .timeline-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(109, 16, 66, 0.15);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .timeline-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-fase {
+            display: inline-block;
+            background: var(--cor-vinho);
+            color: var(--cor-dourado);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-card h3 {
+            color: var(--cor-vinho-escuro);
+            margin: 5px 0 10px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        .timeline-card p {
+            font-size: 0.88rem;
+            color: var(--cor-texto);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsividade para celulares na linha do tempo */
+        @media (max-width: 650px) {
+            .timeline-container::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            .timeline-item::after, .timeline-item:nth-child(even)::after {
+                left: 5px;
+            }
+        }
+
+        /* --- 1. GALERIA --- */
+        .filtro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0px; 
+        }
+
+        .filtro-btn {
+            width: auto;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 105, 180, 0.4);
+            background: #ff69b4; 
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .filtro-btn:hover, .filtro-btn.ativo {
+            background: #d81b60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+        }
+
+        .menu-foto {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .foto-slide {
+            background-color: var(--cor-card);
+            padding: 16px 16px 24px 16px;
+            border-radius: 6px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+            max-width: 280px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .foto-slide::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 18px;
+            background-color: rgba(245, 230, 180, 0.85);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .foto-slide:hover {
+            transform: translateY(-5px) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .foto-slide img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        .titulo-foto {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            color: var(--cor-vinho);
+            margin: 12px 0 0 0;
+        }
+
+        /* --- 2. MOTIVOS (FLIP CARD 3D) --- */
+        .menu-razao {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .cartao-flip {
+            width: 260px;
+            height: 150px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .cartao-flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .cartao-flip.virado .cartao-flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .cartao-frente, .cartao-verso {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cartao-frente {
+            background-color: var(--cor-vinho);
+            color: #ffffff;
+        }
+
+        .cartao-verso {
+            background-color: #ffffff;
+            color: var(--cor-vinho-escuro);
+            border: 2px solid var(--cor-vinho);
+            transform: rotateY(180deg);
+        }
+
+        .numero-razao {
+            color: var(--cor-dourado);
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .dica-clique {
+            font-size: 0.8rem;
+            color: var(--cor-secundaria);
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .verso-texto {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* --- 3. HOMENAGENS --- */
+        .menu-homenagem {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .homenagem {
+            width: 100%;
+            max-width: 280px;
+            background-color: var(--cor-card);
+            color: var(--cor-texto);
+            border-radius: 12px;
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid rgba(109, 16, 66, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .homenagem:hover {
+            transform: translateY(-4px);
+        }
+
+        .desc-homenagem {
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--cor-vinho-escuro);
+        }
+
+        .autor {
+            display: flex;
+            color: #380521;
+            text-align: left;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            font-size: 1.8rem;
+        }
+
+        .autor-texto h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #4c0519;
+        }
+
+        .autor-texto p {
+            margin: 2px 0 0 0;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .divisoria {
+            width: 100%;
+            height: 1px;
+            background-color: #f1f5f9;
+            margin: 25px 0;
+        }
+
+        /* --- 4. DECLARAÇÃO / CARTA --- */
+        .envelope-container {
+            max-width: 600px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+
+        .envelope-capa {
+            background: linear-gradient(135deg, #6d1042, #380521);
+            color: #ffffff;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .envelope-capa:hover {
+            transform: scale(1.02);
+        }
+
+        .selo-cera {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .declaracao {
+            border: 1px solid var(--cor-vinho);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1.5px, transparent 1.5px);
+            background-size: 18px 18px;
+            border-radius: 12px;
+            text-align: center;
+            background-color: #fffdf8;
+            padding: 40px;
+            color: var(--cor-texto);
+            margin-top: 20px;
+            display: none;
+        }
+
+        .declaracao.aberta {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .topo-declaracao {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .titulo-declaracao {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #4c0519;
+            margin: 0;
+        }
+
+        .coracao {
+            position: absolute;
+            right: 0;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: var(--cor-vinho-escuro);
+            color: var(--cor-cinza-claro);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer h1 {
+            color: var(--cor-dourado);
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="cabec-titulo">Feliz Aniversário,</div> 
+        <div class="cabec-titulo">Mãe! ❤️</div>
+        <div class="desc">Que o dia da senhora seja repleto de alegria, amor e saúde!</div>
+    </header>
+
+    <main class="container">
+
+        <img src="imagens/8.jpeg" alt="mae-inicial" class="foto-inicio">
+
+        <!-- NOVO: BLOCOS DO CONTADOR DE DIAS AO VIVO -->
+        <div class="card-contador">
+            <div class="titulo-contador">Celebrando uma vida incrível ✨</div>
+            <div class="frase-destaque-contador">São mais de <span id="contador-dias-texto">...</span> dias espalhando alegria e amor no mundo!</div>
+            
+            <div class="grid-tempo">
+                <div class="item-tempo">
+                    <span class="valor-tempo" id="cnt-dias">0</span>
+                    <span class="rotulo-tempo">Dias</span>
+                </div>
+                <div class="item-tempo">
+                    <span class="valor-tempo" id="cnt-horas">0</span>
+                    <span class="rotulo-tempo">Horas</span>
+                </div>
+                <div class="item-tempo">
+                    <span class="valor-tempo" id="cnt-minutos">0</span>
+                    <span class="rotulo-tempo">Minutos</span>
+                </div>
+                <div class="item-tempo">
+                    <span class="valor-tempo" id="cnt-segundos">0</span>
+                    <span class="rotulo-tempo">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU PRINCIPAL DE OPÇÕES (INICIAL) -->
+        <section id="secao-menu-opcoes" class="secao-menu-opcoes">
+            <div class="subtitulo-menu">SURPRESAS ESPECIAIS</div>
+            <div class="titulo-menu">Escolha o que deseja ver ❤️</div>
+            
+            <div class="grid-opcoes">
+                <!-- NOVO: OPÇÃO DA LINHA DO TEMPO -->
+                <div class="card-opcao" onclick="abrirSecao('linha-tempo')">
+                    <span class="icone-opcao">⏳</span>
+                    <h3>Linha do Tempo</h3>
+                    <p>Os capítulos marcantes da sua história inesquecível.</p>
+                </div>
+
+                <div class="card-opcao" onclick="abrirSecao('galeria')">
+                    <span class="icone-opcao">📸</span>
+                    <h3>Galeria de Memórias</h3>
+                    <p>Fotos inesquecíveis da nossa jornada juntos.</p>
+                </div>
+
+                <div class="card-opcao" onclick="abrirSecao('motivos')">
+                    <span class="icone-opcao">💖</span>
+                    <h3>Motivos de Amar a Senhora</h3>
+                    <p>Cartões interativos com razões especiais.</p>
+                </div>
+
+                <div class="card-opcao" onclick="abrirSecao('homenagens')">
+                    <span class="icone-opcao">💌</span>
+                    <h3>Mural de Homenagens</h3>
+                    <p>Recados cheios de carinho de toda a família.</p>
+                </div>
+
+                <div class="card-opcao" onclick="abrirSecao('carta')">
+                    <span class="icone-opcao">📜</span>
+                    <h3>Carta Especial</h3>
+                    <p>Uma declaração de amor escrita do coração.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
+        <div id="barra-navegacao" class="barra-navegacao">
+            <button class="btn-voltar" onclick="voltarAoMenu()">⬅️ Voltar ao Menu</button>
+            <button class="btn-nav" onclick="abrirSecao('linha-tempo')">⏳ Linha do Tempo</button>
+            <button class="btn-nav" onclick="abrirSecao('galeria')">📸 Galeria</button>
+            <button class="btn-nav" onclick="abrirSecao('motivos')">💖 Motivos</button>
+            <button class="btn-nav" onclick="abrirSecao('homenagens')">💌 Homenagens</button>
+            <button class="btn-nav" onclick="abrirSecao('carta')">📜 Carta Especial</button>
+        </div>
+
+        <!-- NOVO: FUNÇÃO DE LINHA DO TEMPO VISUAL -->
+        <section id="linha-tempo" class="secao-conteudo">
+            <div class="subtitulo-menu">UMA TRAJETÓRIA INSPIRADORA</div>
+            <div class="titulo-menu">Linha do Tempo da Sua Vida ⏳</div>
+            <p style="font-size: 0.9rem; color: #64748b;">Navegue pelos capítulos mais marcantes da pessoa mais especial para nós.</p>
+
+            <div class="timeline-container">
+                <!-- Capítulo 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="timeline-fase">Capítulo 1</span>
+                        <img src="imagens/11.jpeg" alt="Infância e Origem">
+                        <h3>O Início de Tudo</h3>
+                        <p>Onde a luz e a alegria que conhecemos começaram a se moldar. Cada sorriso de infância já anunciava a mulher incrível que a senhora se tornaria.</p>
+                    </div>
+                </div>
+
+                <!-- Capítulo 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="timeline-fase">Capítulo 2</span>
+                        <img src="imagens/10.jpeg" alt="Sonhos e Conquistas">
+                        <h3>Sonhos & Conquistas</h3>
+                        <p>Anos de dedicação, passos corajosos e garra. Ver a senhora realizar objetivos sempre foi uma das maiores inspirações para nossa família.</p>
+                    </div>
+                </div>
+
+                <!-- Capítulo 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="timeline-fase">Capítulo 3</span>
+                        <img src="imagens/4.jpeg" alt="Construção da Família">
+                        <h3>Laços de Amor & Família</h3>
+                        <p>Momentos inesquecíveis construídos com abraços quentinhos, conselhos valiosos e um amor infinito que une todos nós a cada dia.</p>
+                    </div>
+                </div>
+
+                <!-- Capítulo 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="timeline-fase">Capítulo 4</span>
+                        <img src="imagens/2.jpeg" alt="O Presente e o Futuro">
+                        <h3>O Hoje & O Novo Ciclo</h3>
+                        <p>Celebrando hoje tudo o que a senhora construiu e os novos caminhos radiantes que ainda virão. Obrigado por ser o nosso porto seguro!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. FUNÇÃO: GALERIA DE MEMÓRIAS -->
+        <section id="galeria" class="secao-conteudo">
+            <div class="subtitulo-menu">MOMENTOS INESQUECÍVEIS</div>
+            <div class="titulo-menu">Galeria de memórias ❤️</div>
+
+            <div class="filtro-container">
+                <button class="filtro-btn ativo">Todas as fotos</button>
+                <button class="filtro-btn">Família 👨‍👩‍👧‍👦</button>
+                <button class="filtro-btn">Viagens e Passeios ✈️</button>
+                <button class="filtro-btn">Sorrisos ✨</button>
+            </div>
+
+            <div class="menu-foto">
+                <div class="foto-slide">
+                    <img src="imagens/14.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">O Sorriso Mais Lindo</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/1.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Sonequinha Gostosa</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/2.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Momentos em Família</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/3.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Momentos De Receita</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/4.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Momentos em Família</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/5.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Diazinho de Praia</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/6.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Diazinho em Paulo Afonso</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/7.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Mais um Diazinho de Praia</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/8.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Acaízinho</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/9.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Diazinho das Mães</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/10.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Momento no São João da Escola</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/11.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Momento em que eu era pequeno</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/12.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Momento na escola de Elô</h3>
+                </div>
+                <div class="foto-slide">
+                    <img src="imagens/13.jpeg" alt="Foto da Mãe">
+                    <h3 class="titulo-foto">Um Cheiro no Lindão da Mamãe</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FUNÇÃO: MOTIVOS PELOS QUAIS AMO A SENHORA -->
+        <section id="motivos" class="secao-conteudo">
+            <div class="subtitulo-menu">GRATIDÃO INFINITA</div> 
+            <div class="titulo-menu">Motivos pelos quais amo a senhora ❤️</div>
+            <p style="font-size: 0.9rem; color: #64748b;">Clique nos cartões abaixo para virar e descobrir cada razão especial!</p>
+
+            <div class="menu-razao">
+                <div class="cartao-flip" onclick="virarCartao(this)">
+                    <div class="cartao-flip-inner">
+                        <div class="cartao-frente">
+                            <span class="numero-razao">#01</span>
+                            <p>Clique para ver 👆</p>
+                            <span class="dica-clique">Toque aqui</span>
+                        </div>
+                        <div class="cartao-verso">
+                            <p class="verso-texto">Porque a senhora sempre me apoiou em tudo!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cartao-flip" onclick="virarCartao(this)">
+                    <div class="cartao-flip-inner">
+                        <div class="cartao-frente">
+                            <span class="numero-razao">#02</span>
+                            <p>Clique para ver 👆</p>
+                            <span class="dica-clique">Toque aqui</span>
+                        </div>
+                        <div class="cartao-verso">
+                            <p class="verso-texto">Porque a senhora é minha inspiração diária!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cartao-flip" onclick="virarCartao(this)">
+                    <div class="cartao-flip-inner">
+                        <div class="cartao-frente">
+                            <span class="numero-razao">#03</span>
+                            <p>Clique para ver 👆</p>
+                            <span class="dica-clique">Toque aqui</span>
+                        </div>
+                        <div class="cartao-verso">
+                            <p class="verso-texto">Porque o seu abraço cura qualquer dia difícil!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cartao-flip" onclick="virarCartao(this)">
+                    <div class="cartao-flip-inner">
+                        <div class="cartao-frente">
+                            <span class="numero-razao">#04</span>
+                            <p>Clique para ver 👆</p>
+                            <span class="dica-clique">Toque aqui</span>
+                        </div>
+                        <div class="cartao-verso">
+                            <p class="verso-texto">Porque a senhora me ensinou valores valiosos!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao-flip" onclick="virarCartao(this)">
+                    <div class="cartao-flip-inner">
+                        <div class="cartao-frente">
+                            <span class="numero-razao">#04</span>
+                            <p>Clique para ver 👆</p>
+                            <span class="dica-clique">Toque aqui</span>
+                        </div>
+                        <div class="cartao-verso">
+                            <p class="verso-texto">Porque a senhora me ensinou a ser o homem que eu sou hoje!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao-flip" onclick="virarCartao(this)">
+                    <div class="cartao-flip-inner">
+                        <div class="cartao-frente">
+                            <span class="numero-razao">#04</span>
+                            <p>Clique para ver 👆</p>
+                            <span class="dica-clique">Toque aqui</span>
+                        </div>
+                        <div class="cartao-verso">
+                            <p class="verso-texto">Porque a senhora que tem o colo e a presença que trazem paz e conforto!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FUNÇÃO: MURAL DE HOMENAGENS -->
+        <section id="homenagens" class="secao-conteudo">
+            <div class="subtitulo-menu">CARINHO DE QUEM TE AMA</div>
+            <div class="titulo-menu">Mural de Homenagens 💌</div>
+            <p style="font-size: 0.9rem; color: #64748b;">Recadinhos cheios de carinho deixados para deixar o seu dia ainda mais radiante.</p>
+
+            <div class="menu-homenagem">
+                <div class="homenagem">
+                    <p class="desc-homenagem">"Mãe, te amo muito! Obrigado por tudo, a senhora é tudo para mim."</p>
+                    <div class="divisoria"></div>   
+                    <div class="autor">
+                        <span class="avatar">👩‍👦</span>
+                        <div class="autor-texto">
+                            <h4>Seu filho</h4>
+                            <p>Com todo o carinho!</p> 
+                        </div> 
+                    </div>    
+                </div>
+
+                <div class="homenagem">
+                    <p class="desc-homenagem">"Mãe, a senhora sempre trouxe alegria e paz para a nossa família!"</p>
+                    <div class="divisoria"></div>   
+                    <div class="autor">
+                        <span class="avatar">👩‍👧</span>
+                        <div class="autor-texto">
+                            <h4>Sua filha</h4>
+                            <p>Com amor eterno!</p> 
+                        </div> 
+                    </div>    
+                </div>
+                
+                <div class="homenagem">
+                    <p class="desc-homenagem">"Nós te amamos, tia, você é incrível do jeito que é, feliz aniversário!"</p>
+                    <div class="divisoria"></div>   
+                    <div class="autor">
+                        <span class="avatar">👫</span>
+                        <div class="autor-texto">
+                            <h4>Seus Sobrinhos</h4>
+                            <p>Com amor eterno!</p> 
+                        </div> 
+                    </div>    
+                </div>
+                <div class="homenagem">
+                    <p class="desc-homenagem">"Meu amor, obrigado por ser a mulher que é, eu te amo muito, feliz aniversário !"</p>
+                    <div class="divisoria"></div>   
+                    <div class="autor">
+                        <span class="avatar">👫💍</span>
+                        <div class="autor-texto">
+                            <h4>Seu Marido</h4>
+                            <p>Até que a morte nos separe!</p> 
+                        </div> 
+                    </div>    
+                </div>
+
+                <div class="homenagem">
+                    <p class="desc-homenagem">"Mãe, você é a pessoa mais especial do mundo."</p>
+                    <div class="divisoria"></div>   
+                    <div class="autor">
+                        <span class="avatar">❤️</span>
+                        <div class="autor-texto">
+                            <h4>Toda a Família</h4>
+                            <p>Com carinho de todos nós!</p> 
+                        </div> 
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FUNÇÃO: DECLARAÇÃO / CARTA -->
+        <section id="carta" class="secao-conteudo">
+            <div class="subtitulo-menu">MENSAGEM DO CORAÇÃO</div>
+            <div class="titulo-menu">Carta Especial 📜</div>
+
+            <div class="envelope-container" onclick="abrirCarta()">
+                <div class="envelope-capa">
+                    <div class="selo-cera">✉️</div>
+                    <h2 style="font-family: 'Playfair Display', serif; margin: 10px 0;">Para a Melhor Mãe do Mundo</h2>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">Clique aqui para abrir a carta com carinho ❤️</p>
+                </div>
+
+                <div id="declaracao-texto" class="declaracao">
+                    <div class="topo-declaracao">
+                        <h3 class="titulo-declaracao">Minha querida mãe,</h3>
+                        <span class="coracao">❤️</span>
+                    </div>
+                    <div class="divisoria"></div>
+                    <p>Hoje é o seu dia, mas o presente é nosso por podermos caminhar ao seu lado e aprender diariamente com a sua luz e generosidade(Mesmo sendo um pouquinho chata e estressada as vezes).</p><br>
+                    <p>Seus gestos simples, seu abraço quentinho quando o mundo lá fora parece difícil e o seu amor sem limites moldaram quem nós somos. Não existem palavras suficientes para agradecer tudo o que você fez e continua fazendo por nossa família.</p><br>
+                    <p>Desejamos que este novo ano da vida da senhora venha recheado de saúde plena, sorrisos sinceros, momentos de descanso e muita paz. Que a senhora nunca se esqueça do quão especial e amada a senhora é!</p><br>
+                    <div class="divisoria"></div>
+                    <div class="ultima-mensagem">
+                        <p>Com todo o nosso amor e gratidão,</p>
+                        <h4 style="color: var(--cor-vinho); font-size: 1.2rem;">Sua família eterna ❤️</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h1>Mãe, te amo infinitamente!</h1>
+        <p>Criado com carinho e amor para celebrar o dia da mulher da minha vida no Dia 25 ❤️</p>
+    </footer>
+
+    <script>
+        // ============================================================
+        // AJUSTE AQUI A DATA DE NASCIMENTO DA SUA MÃE (Ano-Mês-Dia)
+        // ============================================================
+        const dataNascimentoMae = new Date('1990-10-25T09:00:00'); 
+
+        function atualizarContador() {
+            const agora = new Date();
+            const diferencaMs = agora - dataNascimentoMae;
+
+            if (diferencaMs > 0) {
+                const totalDias = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencaMs / (1000 * 60 * 60)) % 24);
+                const minutos = Math.floor((diferencaMs / (1000 * 60)) % 60);
+                const segundos = Math.floor((diferencaMs / 1000) % 60);
+
+                document.getElementById('contador-dias-texto').innerText = totalDias.toLocaleString('pt-BR');
+                document.getElementById('cnt-dias').innerText = totalDias.toLocaleString('pt-BR');
+                document.getElementById('cnt-horas').innerText = horas.toString().padStart(2, '0');
+                document.getElementById('cnt-minutos').innerText = minutos.toString().padStart(2, '0');
+                document.getElementById('cnt-segundos').innerText = segundos.toString().padStart(2, '0');
+            }
+        }
+
+        // Inicia o contador e atualiza a cada 1 segundo
+        atualizarContador();
+        setInterval(atualizarContador, 1000);
+
+        // Função para abrir uma seção específica
+        function abrirSecao(idSecao) {
+            document.getElementById('secao-menu-opcoes').style.display = 'none';
+
+            const secoes = document.querySelectorAll('.secao-conteudo');
+            secoes.forEach(secao => secao.style.display = 'none');
+
+            document.getElementById('barra-navegacao').style.display = 'flex';
+
+            const secaoEscolhida = document.getElementById(idSecao);
+            if (secaoEscolhida) {
+                secaoEscolhida.style.display = 'block';
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Função para voltar ao Menu Principal
+        function voltarAoMenu() {
+            const secoes = document.querySelectorAll('.secao-conteudo');
+            secoes.forEach(secao => secao.style.display = 'none');
+
+            document.getElementById('barra-navegacao').style.display = 'none';
+            document.getElementById('secao-menu-opcoes').style.display = 'block';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Função para virar os cartões dos motivos (efeito 3D)
+        function virarCartao(cartao) {
+            cartao.classList.toggle('virado');
+        }
+
+        // Função para abrir a carta de declaração
+        function abrirCarta() {
+            const carta = document.getElementById('declaracao-texto');
+            carta.classList.toggle('aberta');
+        }
+    </script>
+</body>
+</html>
